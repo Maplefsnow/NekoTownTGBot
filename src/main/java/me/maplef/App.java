@@ -5,7 +5,7 @@ import org.telegram.telegrambots.longpolling.TelegramBotsLongPollingApplication;
 public class App 
 {
     public static void main( String[] args ) {
-        if (System.getenv("BOT_TOEN") == null) {
+        if (System.getenv("BOT_TOKEN") == null) {
             System.err.println("No BOT_TOKEN set!");
             return;
         }

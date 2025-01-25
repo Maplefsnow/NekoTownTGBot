@@ -1,4 +1,4 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.debug.settings.vmArgs": "-DBOT_TOKEN=8004078585:AAFB3M9VWNrb-595GTRpXZludcTveeAm17g",
+    "java.debug.settings.vmArgs": "",
 }

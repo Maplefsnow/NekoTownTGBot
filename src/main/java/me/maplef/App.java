@@ -24,6 +24,7 @@ public class App
                 public void run() {
                     try {
                         System.out.println("NekoTownBot GoodBye!");
+                        nekoAbilityBot.getSilent().send("NekoTownBot GoodBye!", -1002439035442L);
                         botsApplication.unregisterBot(BOT_TOKEN);
                     } catch (Exception e) {
                         e.printStackTrace();

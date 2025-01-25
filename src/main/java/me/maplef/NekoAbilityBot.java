@@ -17,6 +17,11 @@ public class NekoAbilityBot extends AbilityBot{
         return 1970225123;
     }
 
+    @Override
+    public void onRegister() {
+        silent.send("NekoTown Bot Start!", -1002439035442L);
+    }
+
     public Ability testBot() {
         return Ability
                 .builder()
@@ -26,6 +31,21 @@ public class NekoAbilityBot extends AbilityBot{
                 .privacy(Privacy.PUBLIC)
                 .action(ctx -> {
                     silent.send("HelloWorld from Java TGBot API - Ability", ctx.chatId());
+                })
+                .build();
+    }
+
+    public Ability testCmd() {
+        return Ability
+                .builder()
+                .name("test")
+                .info("test commands")
+                .locality(Locality.ALL)
+                .privacy(Privacy.PUBLIC)
+                .action( ctx -> {
+                    String str = ctx.toString();
+                    System.out.println("receive: " + str);
+                    silent.send("command recv!", ctx.chatId());
                 })
                 .build();
     }

@@ -31,6 +31,16 @@
             <artifactId>telegrambots-client</artifactId>
             <version>8.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-abilities</artifactId>
+            <version>8.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lz4</groupId>
+            <artifactId>lz4-java</artifactId>
+            <version>1.7.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,6 +64,16 @@
                                     <mainClass>me.maplef.App</mainClass>
                                 </transformer>
                             </transformers>
+                            <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
                         </configuration>
                     </execution>
                 </executions>

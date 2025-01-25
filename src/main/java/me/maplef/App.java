@@ -1,5 +1,6 @@
 package me.maplef;
 
+import org.telegram.telegrambots.client.okhttp.OkHttpTelegramClient;
 import org.telegram.telegrambots.longpolling.TelegramBotsLongPollingApplication;
 
 public class App 
@@ -13,8 +14,11 @@ public class App
         String BOT_TOKEN = System.getenv("BOT_TOKEN");
 
         try (TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication()) {
-            botsApplication.registerBot(BOT_TOKEN, new NekoTownBot());
-            System.out.println("NekoTownBot Hello World!");
+            NekoAbilityBot nekoAbilityBot = new NekoAbilityBot(new OkHttpTelegramClient(BOT_TOKEN), BOT_TOKEN);
+            nekoAbilityBot.onRegister();
+
+            botsApplication.registerBot(BOT_TOKEN, nekoAbilityBot);
+            System.out.println("NekoAbilityBot Hello World!");
 
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 public void run() {
